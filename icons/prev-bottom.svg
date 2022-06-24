@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.0"
+   width="1280.000000pt"
+   height="1280.000000pt"
+   viewBox="0 0 1280.000000 1280.000000"
+   preserveAspectRatio="xMidYMid meet"
+   id="svg14"
+   sodipodi:docname="prev-bottom.svg"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs18" />
+  <sodipodi:namedview
+     id="namedview16"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="pt"
+     showgrid="false"
+     inkscape:zoom="0.51386719"
+     inkscape:cx="713.21931"
+     inkscape:cy="855.27936"
+     inkscape:window-width="1920"
+     inkscape:window-height="1044"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg14" />
+  <metadata
+     id="metadata2">
+Created by potrace 1.16, written by Peter Selinger 2001-2019
+</metadata>
+  <g
+     transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)"
+     fill="#000000"
+     stroke="none"
+     id="g12"
+     style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-opacity:1">
+    <path
+       d="M6396 12784 c-166 -30 -358 -111 -506 -214 -112 -78 -5366 -5335 -5437 -5440 -153 -227 -225 -461 -225 -730 0 -266 65 -486 209 -705 61 -93 245 -279 2702 -2738 1757 -1759 2664 -2660 2721 -2703 155 -117 356 -206 544 -239 115 -20 337 -20 452 0 310 55 596 230 787 483 117 156 191 319 233 512 26 119 26 391 0 510 -37 170 -105 330 -199 470 -39 58 -544 569 -2216 2243 l-2166 2167 2166 2168 c2264 2265 2216 2215 2301 2387 148 294 177 640 82 953 -137 452 -524 796 -988 877 -111 19 -351 19 -460 -1z m404 -519 c224 -55 402 -197 500 -400 121 -249 105 -520 -45 -751 -26 -40 -759 -781 -2295 -2319 -2487 -2489 -2297 -2290 -2288 -2412 2 -32 13 -76 23 -98 13 -28 697 -719 2273 -2297 1438 -1439 2268 -2277 2293 -2315 105 -157 143 -367 103 -561 -58 -283 -273 -505 -559 -577 -91 -23 -255 -24 -350 -1 -38 9 -113 37 -165 63 l-95 46 -2661 2661 -2661 2661 -46 95 c-60 123 -80 208 -80 340 0 163 40 295 131 426 49 71 5266 5288 5332 5331 175 117 392 156 590 108z"
+       id="path4"
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-opacity:1" />
+    <path
+       d="M1448 6266 c-165 -45 -246 -240 -158 -381 29 -46 420 -430 459 -450 46 -23 140 -31 196 -15 55 15 128 78 157 134 34 64 31 166 -5 232 -34 61 -430 448 -480 469 -51 21 -118 26 -169 11z"
+       id="path6"
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-opacity:1" />
+    <path
+       d="M2470 5251 c-80 -26 -146 -88 -175 -165 -22 -57 -16 -145 13 -203 14 -26 590 -601 1684 -1679 915 -901 1812 -1785 1993 -1965 194 -191 347 -335 370 -347 105 -53 217 -34 300 51 57 58 75 105 75 190 0 41 -7 68 -27 105 -39 71 -3987 3962 -4053 3994 -48 23 -138 33 -180 19z"
+       id="path8"
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-opacity:1" />
+    <path
+       d="M11075 12784 c-165 -29 -322 -92 -472 -189 -79 -51 -375 -343 -2764 -2733 -2085 -2086 -2686 -2692 -2722 -2747 -96 -149 -158 -296 -194 -465 -25 -119 -25 -381 0 -500 39 -182 110 -346 214 -493 44 -63 658 -683 2618 -2646 1408 -1409 2607 -2606 2665 -2659 268 -244 539 -352 885 -352 362 0 652 121 905 379 217 221 333 470 359 773 27 316 -57 619 -242 873 -41 55 -720 741 -2206 2228 l-2146 2147 2151 2153 c1278 1278 2172 2180 2202 2222 109 148 195 349 227 530 22 121 22 334 1 450 -49 261 -157 474 -338 661 -189 196 -427 323 -687 368 -116 20 -344 20 -456 0z m421 -525 c142 -35 295 -133 385 -243 212 -262 232 -629 49 -903 -18 -26 -1046 -1063 -2285 -2303 -1634 -1635 -2259 -2267 -2276 -2300 -28 -56 -30 -155 -5 -215 13 -30 601 -624 2281 -2305 1960 -1962 2268 -2274 2304 -2335 224 -385 84 -862 -313 -1062 -230 -116 -524 -99 -743 43 -67 43 -5245 5211 -5320 5309 -187 247 -203 575 -42 853 26 44 645 669 2644 2670 1435 1437 2637 2634 2670 2659 191 145 419 191 651 132z"
+       id="path10"
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-opacity:1" />
+  </g>
+</svg>
