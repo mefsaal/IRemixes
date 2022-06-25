@@ -25,22 +25,6 @@
 
 :root {
 
-    --checked: var(--keyColor);
-
-    .modal-fullscreen{
-        backdrop-filter: blur(16px) brightness(0.5);
-
-        .modal-window{
-            .modal-header{
-                padding-block       : 6px;
-
-                .close-btn{
-                    top: 0px;
-                }
-            }
-        }
-    }
-
     .modal.show {
     
         .modal-dialog {
@@ -55,6 +39,8 @@
             }
         }
     }
+
+    --checked: var(--keyColor);
 
         /* Less Variables */
         --baseColor             : @baseColor;
