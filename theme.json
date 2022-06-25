@@ -9,6 +9,26 @@
             "name": "Inline-Drawers",
             "description": "",
             "file": "addons/inline.less"
+        },
+        {
+            "name": "NoN-Floaty",
+            "description": "No Floaty Bottom panel",
+            "file": "addons/nonfloaty.less"
+        },
+        {
+            "name": "Controls Position",
+            "description": "Controls Position to Vanilla Theme",
+            "file": "addons/vanillacontrol.less"
+        },
+        {
+            "name": "Controls Position Reverse",
+            "description": "Controls Position to Vanilla Theme (reverse)",
+            "file": "addons/vanillacontrolreverse.less"
+        },
+        {
+            "name": "Controls Position Right",
+            "description": "Controls Position to Right",
+            "file": "addons/controlsright.less"
         }
     ]
 }
