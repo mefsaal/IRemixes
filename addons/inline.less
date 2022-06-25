@@ -1,0 +1,71 @@
+#app {
+
+    .drawertransition-enter-active,
+    .drawertransition-leave-active {
+        transition: margin .25s var(--appleEase), opacity .25s var(--appleEase);
+        background          : var(--baseColorMix);
+        backdrop-filter     : var(--glassFilter3);
+    }
+
+    .drawertransition-enter,
+    .drawertransition-leave-to {
+        margin-right: -320px;
+        background          : var(--baseColorMix);
+        backdrop-filter     : var(--glassFilter3);
+    }
+}
+
+#app-main {
+    &:not(.modular-fs) {
+        .app-drawer {
+        position            : relative;
+        right               : 0px;
+        border-radius       : 0px;
+        top                 : 0px;
+        box-shadow          : none;
+        height              : -webkit-fill-available;
+        background          : var(--baseColorMix);
+        backdrop-filter     : var(--glassFilter3);
+
+            .lyric-body{
+                margin-top : 50px;
+                .lyric-line {
+                    transform         : scale(0.75);
+                    margin-block-start: 20px;
+                    opacity           : 0.3;
+
+                    &.active {
+                        opacity         : 1;
+                        backdrop-filter : blur(0px);
+                        transform       : scale(1);
+                        transform-origin: left center;
+                        transition      : all 0.5s var(--appleEase);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+#app.twopanel {
+    &:not(.modular-fs) {
+        .app-drawer {
+            padding-bottom          : calc(var(--padding-bottom) + 94px);
+
+            .lyric-body {
+                //padding-bottom      : var(--padding-bottom);
+            }
+
+            .lyric-footer {
+                margin-bottom       : var(--padding-bottom);
+                border-radius       : var(--borderadius);
+            }
+
+            .queue-panel {
+                height: calc(100% + var(--chromeHeight2))
+            }
+        }
+
+    }
+}
