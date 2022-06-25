@@ -11,22 +11,22 @@
             "file": "addons/inline.less"
         },
         {
-            "name": "NoN-Floaty",
+            "name": "NoN-Floaty(Mojave)",
             "description": "No Floaty Bottom panel",
             "file": "addons/nonfloaty.less"
         },
         {
-            "name": "Controls Position",
+            "name": "Controls Position(Mojave)",
             "description": "Controls Position to Vanilla Theme",
             "file": "addons/vanillacontrol.less"
         },
         {
-            "name": "Controls Position Reverse",
+            "name": "Controls Position Reverse(Mojave)",
             "description": "Controls Position to Vanilla Theme (reverse)",
             "file": "addons/vanillacontrolreverse.less"
         },
         {
-            "name": "Controls Position Right",
+            "name": "Controls Position Right(Mojave)",
             "description": "Controls Position to Right",
             "file": "addons/controlsright.less"
         }
