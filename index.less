@@ -7,8 +7,8 @@
 @transparencyRate: 55%;
 @appOpacity      : 0;
 
-@baseColor           : rgb(24, 24, 24);
-@baseColorMix        : mix(@baseColor, transparent, 75%);
+@baseColor           : rgb(31, 31, 31);
+@baseColorMix        : mix(@baseColor, transparent, 85%);
 @background          : rgba(0, 0, 0, 0);
 @backgroundMix       : mix(@background, transparent, 90%);
 @sidebarColor        : rgb(15, 15, 15);
@@ -59,9 +59,9 @@
         --glassFilter3          : @glassFilter3;
         --glassFilter4          : @glassFilter4;
         /* Colors */
-        --keyColor              : #f31c92;
-        --ciderColor            : #b406b4;
-        --artistHoverColor      : rgba(250, 35, 160, 0.8);
+        --keyColor              : #e33165;
+        --ciderColor            : #d11950;
+        --artistHoverColor      : rgb(185, 25, 73);
         --activeTabColor        : rgba(250, 88, 106, 0.1);
         --volumeTrackColor      : rgba(200, 200, 200, 0.3);
         --categoriesColor       : rgba(50, 50, 50, 25%);
@@ -389,6 +389,27 @@
 
                 .playlist-time {
                     margin-bottom: 10px !important;
+                }
+
+                .playlist-body {
+                    .scrollbody { 
+                        .tabs {
+                            .tab-content {
+                                .tab-pane {
+                                    .listitem-content {
+                                        .info-rect {
+                                            .title {
+                                                position: absolute;
+                                            }
+                                            .subtitle {
+                                                margin-left: 20%;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
 
