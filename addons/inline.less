@@ -2,16 +2,16 @@
 
     .drawertransition-enter-active,
     .drawertransition-leave-active {
-        transition: margin .25s var(--appleEase), opacity .25s var(--appleEase);
-        background          : var(--baseColorMix);
-        backdrop-filter     : var(--glassFilter3);
+        transition              : margin .25s var(--appleEase), opacity .25s var(--appleEase);
+        background              : var(--baseColorMix);
+        backdrop-filter         : var(--glassFilter3);
     }
 
     .drawertransition-enter,
     .drawertransition-leave-to {
-        margin-right: -320px;
-        background          : var(--baseColorMix);
-        backdrop-filter     : var(--glassFilter3);
+        margin-right            : -320px;
+        background              : var(--baseColorMix);
+        backdrop-filter         : var(--glassFilter3);
     }
 }
 
@@ -21,9 +21,9 @@
         position            : relative;
         right               : 0px;
         border-radius       : 0px;
-        top                 : 0px;
+        top                 : 0px !important;
         box-shadow          : none;
-        height              : -webkit-fill-available;
+        height              : -webkit-fill-available !important;
         background          : var(--baseColorMix);
         backdrop-filter     : var(--glassFilter3);
 
@@ -50,6 +50,9 @@
 
 #app.twopanel {
     &:not(.modular-fs) {
+        top                 : 0px !important;
+        height              : -webkit-fill-available !important;
+
         .app-drawer {
             padding-bottom          : calc(var(--padding-bottom) + 94px);
 
