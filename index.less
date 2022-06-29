@@ -548,6 +548,17 @@
             background-color: var(--keyColor);
         }
     }
+
+    .settings-panel {
+        backdrop-filter: blur(16px) brightness(0.5);
+        z-index: 20;
+
+        .settings-window {
+            background: transparent;
+            backdrop-filter: var(--glassFilter2);
+            border-radius: var(--borderadius);
+        }
+    }
 }
 
 .bg-artwork--placeholder {
@@ -676,30 +687,19 @@
 
                         input[type="range"] {
                             border-radius: 16px;                              
-                            //background: linear-gradient(90deg, rgba(121,9,95,1) 25%, rgba(79,9,121,1) 65%, rgba(0,0,0,1) 100%) !important;
-                            //background-image: linear-gradient(90deg, rgba(121,9,95,1) 25%, rgba(79,9,121,1) 65%, rgba(0,0,0,1) 100%) !important;;
-                            //--songProgressColor: var(--keyColor);
                             box-shadow              : 0px 0px 0px 1px rgba(0, 0, 0, 25%);
 
 
                             &::-webkit-slider-thumb {
                                 border-radius: 16px;
-                               /*  width        : 7px;
-                                height       : 15px; */
                                 border       : 1px solid @mediaColorMix;
-                                /* background   : mix(black, @songProgressColor, 20%); */
-                                background   : radial-gradient(circle, rgba(0, 0, 0, 90%) 15%, var(--keyColor) 100%);
+                                background   : var(--keyColor);
 
                                 &:hover {
                                     opacity         : 1;
-                                    background-image: radial-gradient(circle, rgba(0, 0, 0, 90%) 15%, var(--keyColor) 100%);
+                                    background-image: var(--keyColor);
                                 }
                             }
-                        }
-
-                        .song-duration {
-                            margin-left : -1px;
-                            margin-right: 6px;
                         }
                     }
     
