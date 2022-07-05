@@ -40,6 +40,10 @@
         }
     }
 
+    .modal-window {
+        border-radius: var(--borderadius);
+    }
+
     --checked: var(--keyColor);
 
         /* Less Variables */
@@ -197,6 +201,37 @@
         }
     }
 
+    .installed-themes-page {
+        border      : var(--border) !important;
+        
+        .repos-list {
+            padding-left: 16px;
+
+            .repo-header {
+                border-radius: var(--borderadius);
+                backdrop-filter: none;
+                border: var(--border);
+                width: 95%;
+            }
+
+            .list-group-item {
+                background      : transparent;
+                border          : var(--border) !important;
+                border-radius   : var(--borderadius);
+            }
+        }
+    }
+
+    .settings-window {
+        .md-option-container .md-option-line:not(:last-child){
+            border-bottom:var(--border) ;
+        }
+
+        .md-option-line.child{
+            border-radius: var(--borderadius);
+        }
+    }
+
     #app-content{
         border-left: var(--border);
         backdrop-filter: var(--glassFilter3) !important;
@@ -335,41 +370,10 @@
                 }
             }
 
-            &.settings-page {
-                .md-option-container .md-option-line:not(:last-child){
-                    border-bottom:var(--border) ;
-                }
-
-                .md-option-line.child{
-                    border-radius: var(--borderadius);
-                }
-            }
-
             &.home-page {
                 .well.artistfeed-well{
                     border-radius   : var(--borderadius);
                     background      : rgb(128 128 128 / 10%);
-                }
-            }
-            
-            &.github-themes-page{
-                border      : var(--border) !important;
-                
-                .repos-list {
-                    padding-right   : 16px;
-                    padding-left: 5px;
-
-                    .repo-header {
-                        border-radius: var(--borderadius);
-                        backdrop-filter: none;
-                        border: var(--border);
-                    }
-    
-                    .list-group-item {
-                        background      : transparent;
-                        border          : var(--border) !important;
-                        border-radius   : var(--borderadius);
-                    }
                 }
             }
 
@@ -557,6 +561,16 @@
             background: transparent;
             backdrop-filter: var(--glassFilter2);
             border-radius: var(--borderadius);
+        }
+
+        .md-option-container{
+            .md-option-line:not(:last-child) {
+                border-bottom: var(--border);
+            }
+        }
+
+        ._svg-icon {
+            background: var(--keyColor);
         }
     }
 }
