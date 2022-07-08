@@ -1008,6 +1008,20 @@
             }
         }
     }
+
+    &[library-visible="0"] {
+        #app-main {
+            .app-chrome.chrome-bottom {
+                margin-left: 0;
+            }
+        }
+
+        .app-chrome:not(.chrome-bottom) {
+            &::before {
+                width: 100%;
+            }
+        }
+    }
 }
 
 #app-sidebar {
