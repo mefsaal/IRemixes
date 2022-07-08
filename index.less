@@ -11,7 +11,8 @@
 @baseColor           : rgb(31, 31, 31);
 @baseColorMix        : mix(@baseColor, transparent, 85%);
 @background          : rgba(0, 0, 0, 0);
-@backgroundMix       : mix(@background, transparent, 45%);
+@background2         : rgb(0,0,0);
+@backgroundMix       : mix(@background2, transparent, 45%);
 @sidebarColor        : rgb(15, 15, 15);
 @sidebarColorMix     : mix(@sidebarColor, transparent, @transparencyRate);
 @mediaColor          : rgb(85, 85, 85);
@@ -642,7 +643,7 @@
                 height              : 100%;
                 max-width           : initial;
                 border              : var(--buttonborder);
-                background-color    : var(--background);
+                background-color    : @backgroundMix;
                 margin-left         : 16px;
                 border-radius       : 5px;
 
