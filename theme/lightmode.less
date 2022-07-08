@@ -1,6 +1,6 @@
 @baseColor              : rgb(255, 255, 255);
-@baseColorMix           : mix(@baseColor, transparent, 80%);
-@sidebarColor           : rgb(255, 255, 255);
+@baseColorMix           : mix(@baseColor, transparent, 99%);
+@sidebarColor           : rgb(249, 249, 249);
 @sidebarColorMix        : mix(@sidebarColor, transparent, 40%);
 @mediaColor             : rgb(255, 255, 255);
 @mediaColorMix          : mix(@mediaColor, transparent, @transparencyRate);
@@ -23,6 +23,7 @@
     --volumeThumbColor        : @volumeThumbColor;
     /* Colors */
     --keyColor                : #d60017;
+    --keyColorSubtle          : rgba(214, 0, 23, 0.75);
     --ciderColor              : #ff2654;
     --artistHoverColor        : rgba(250, 35, 59, 0.8);
     --activeTabColor          : rgba(214, 0, 23, 0.25);
@@ -32,6 +33,7 @@
     --searchBarBackgroundColor: rgba(255, 255, 255, 0.45);
     --menuBackgroundColor     : rgba(250, 250, 250, 0.75);
     --keyColor-disabled       : rgba(214, 0, 23, 0.35);
+    --modalBackground         : var(--baseColor);
 
     /* Text */
     --textColor     : #111;
@@ -51,20 +53,90 @@
 
 }
 
+#app.twopanel {
+    #app-main {
+        .app-chrome:not(.chrome-bottom) {
+            &::before {
+                background-color: rgba(230, 230, 230, 0.8);
+            }
+
+            .search-input--icon {
+                filter: brightness(0.15) !important;
+            }
+
+            .search-input {
+                background: rgba(241, 241, 241, 0.5);
+                border    : 1px solid var(--contentBorderColor);
+                color     : #777;
+            }
+        }
+
+        .app-chrome--center {
+            .top-nav-group {
+                background   : rgba(241, 241, 241, 0.5) !important;
+                border       : 1px solid var(--contentBorderColor);
+                border-radius: 6px;
+
+                .app-sidebar-item {
+                    color        : #777;
+                    font-weight  : 500;
+                    border-radius: 6px !important;
+
+                    ._svg-icon {
+                        background: #777;
+                    }
+
+                    &.active,
+                    &:hover {
+                        border-left: none !important;
+
+                        &::before {
+                            --dist          : 0px;
+                            background-color: #333;
+                            border-radius   : 6px;
+                        }
+
+                        &+.app-sidebar-item {
+                            border-left: none !important;
+                        }
+                    }
+
+                    &+.app-sidebar-item {
+                        border-left              : 1px solid var(--contentBorderColor);
+                        border-top-left-radius   : 0 !important;
+                        border-bottom-left-radius: 0 !important;
+                    }
+
+                }
+            }
+        }
+
+        .chrome-bottom {
+            --color2: rgba(255, 255, 255, 0.5);
+
+            .app-playback-controls {
+                border: none;
+            }
+        }
+    }
+
+}
+
 #app.simplebg {
     background: transparent !important;
 }
 
 body {
-    background: #eee!important;
+    background: #eee !important;
 }
 
 #app-main {
     // background-color: var(--sidebarColorMix);
     background-color: transparent;
+
     .app-chrome {
 
-        button.playback-button,
+        button.playback-button:not(.collapseLibrary),
         button.playback-button--small.queue,
         button.volume-button--small,
         .window-controls,
@@ -72,6 +144,7 @@ body {
             filter: invert(1);
         }
 
+        button.playback-button--small.cast,
         button.playback-button--small.repeat,
         button.playback-button--small.shuffle,
         button.playback-button--small.lyrics {
@@ -94,10 +167,7 @@ body {
         .app-chrome-item.volume input[type="range"]::-webkit-slider-thumb {
             background: mix(@volumeThumbColor, @mediaColor, 50%) !important;
         }
-
     }
-
-
 }
 
 .app-navigation {
@@ -105,9 +175,8 @@ body {
     display : flex;
 
     #app-sidebar {
-        background-color: var(--sidebarColorMix);
+        background-color: var(--sidebarColor);
         z-index         : 1;
-        transition      : background-color 0.7s 0.1s var(--appleEase);
 
         .search-input--icon {
             filter: brightness(0.15) !important;
@@ -117,6 +186,10 @@ body {
             color      : var(--textColorLight);
             filter     : invert(0.75);
             font-weight: 300;
+        }
+
+        ._svg-icon[svg-name='sidebar-playlist'] {
+            filter: invert(0.9);
         }
     }
 
@@ -149,7 +222,7 @@ body {
                 .nav-link.active {
                     color      : rgba(50, 50, 50, 0.75);
                     font-weight: normal;
-                    box-shadow: 0px 0px 36px 0px rgba(0, 0, 0, 0.3);
+                    box-shadow : 0px 0px 36px 0px rgba(0, 0, 0, 0.3);
 
                     &::after {
                         background-color: rgba(200, 200, 200, 0.35);
@@ -173,15 +246,17 @@ body {
                     border          : 1px solid var(--appBorderColor);
                     scale           : 1.025;
                 }
-                &.active{
+
+                &.active {
                     box-shadow: 0px 0px 36px 0px rgba(0, 0, 0, 0.3);
                 }
             }
         }
-        
 
-        .md-btn {
+
+        .md-btn-primary {
             background: var(--keyColor);
+            color     : var(--textColorLight);
         }
 
         .md-select {
@@ -223,26 +298,35 @@ body {
                 backdrop-filter: blur(16px) saturate(160%);
             }
         }
+
         .playlist-page {
-            .cd-mediaitem-list-item{
+            .cd-mediaitem-list-item {
                 height: 50px;
+
                 &:nth-child(odd) {
                     background-color: rgba(0, 0, 0, 0.05) !important;
-                    
+
                 }
-                .info-rect, .heart-icon, .explicit-icon, .duration{
+
+                .info-rect,
+                .heart-icon,
+                .explicit-icon,
+                .duration {
                     border-bottom: none !important;
                 }
-                .info-rect{
-                    flex-flow: row;
+
+                .info-rect {
+                    flex-flow  : row;
                     align-items: center;
-                    .title{
+
+                    .title {
                         width: 60ch;
                     }
-                    
+
                 }
+
                 .subtitle {
-                    opacity: 0.85;
+                    opacity  : 0.85;
                     font-size: 0.9em;
 
                     display: flex;
@@ -252,7 +336,8 @@ body {
     }
 
     .app-drawer {
-        background: mix(@sidebarColor, transparent, 40%) !important;
+        background     : mix(@sidebarColor, transparent, 40%) !important;
+        backdrop-filter: var(--glassFilterHeavy) !important;
 
         &::before {
             content   : '';
@@ -266,22 +351,100 @@ body {
             background: inherit;
             margin    : -20px;
             z-index   : -1;
+            display   : none;
         }
     }
-    .md-body.lyric-body{
-        background-color: rgba(0,0,0,0.35);
+
+    .bgArtworkMaterial {
+        display: block;
+    }
+
+    .md-body.lyric-body {
+        backdrop-filter: brightness(0.5) saturate(500%);
         -webkit-mask-image: none;
-        .lyric-line.active{
+
+        .lyric-line.active {
             backdrop-filter: none !important;
         }
     }
-    .lyric-footer{
-        background: rgba(255,255,255,0.8);
-        backdrop-filter: blur(16px);
-        .md-btn{
+
+    .lyric-footer {
+        background     : rgba(255, 255, 255, 0.5) !important;
+        padding-bottom: 0 !important;
+
+        .md-btn {
             background: var(--keyColor);
         }
     }
+
+    .queue-panel {
+        .autoplay {
+            background: rgba(0, 0, 0, 0.25);
+        }
+    }
+}
+
+.settings-panel {
+    background: rgba(255, 255, 255, 0.25);
+
+    .settings-window {
+        background: transparent;
+
+        .close-btn:not(.minmax-btn) {
+            &::before {
+                color: #111;
+            }
+
+            &:hover::before {
+                filter: invert(1);
+            }
+        }
+
+
+        .tabs .col-auto {
+            background: rgba(255, 255, 255, 0.25);
+
+            .nav-link {
+                color: #555;
+
+                ._svg-icon {
+                    background-color: var(--keyColor);
+                }
+            }
+
+        }
+
+        .tabs .tab-content {
+            background: rgba(255, 255, 255, 0.60);
+        }
+    }
+}
+
+.md-btn:not(.md-btn-replay) {
+    background: var(--searchBarBackgroundColor);
+    border    : 1px solid var(--contentBorderColor);
+    color     : var(--textColor);
+
+    &:hover {
+        filter          : brightness(1);
+        background-color: var(--keyColor);
+        color           : var(--textColorLight);
+    }
+
+}
+
+.md-select {
+
+    >option,
+    >optgroup,
+    optgroup>option {
+        background: #eee;
+    }
+}
+
+input[type="checkbox"]:checked:hover {
+    filter    : brightness(1);
+    background: var(--keyColor) !important;
 }
 
 input[type="number"],
@@ -301,7 +464,41 @@ input[type="text"] {
         background-color : @sidebarColorMix  !important;
     }
 }
-.popover-body .content{
+
+.addtoplaylist-panel {
+    .modal-content {
+        box-shadow: none;
+
+        .playlist-item .icon {
+            color: var(--keyColor) !important;
+        }
+
+        .app-sidebar-item {
+            color: var(--textColor);
+
+            ._svg-icon {
+                background: var(--keyColor);
+            }
+
+            &:hover {
+                background: var(--categoriesColor);
+            }
+        }
+    }
+
+    .modal-search {
+        @sidebarColor   : rgb(240, 240, 241);
+        background-color: @sidebarColor  !important;
+
+        .search-input {
+            background: rgba(241, 241, 241, 0.5);
+            border    : 1px solid var(--contentBorderColor);
+            color     : #777;
+        }
+    }
+}
+
+.popover-body .content {
     color: var(--textColorLight);
 }
 
