@@ -1,0 +1,208 @@
+#app.twopanel{
+    --chromeHeight1         : 55px;
+    --chromeHeight2         : 90px;
+    --chromeHeight          : var(--chromeHeight1);
+    --padding-bottom        : calc(var(--chromeHeight2) + var(--bottom));
+
+    .app-mainmenu{
+        margin-right: calc(var(--sidebarWidth) * 0.5);
+    }
+
+    .app-navigation {
+        height: 100%;
+    }
+
+    .modular-fs {
+        .app-drawer {
+            top: 0px !important;
+            z-index: 16;
+            
+            .lyric-footer {
+                bottom: calc(var(--padding-bottom));
+            }
+        }
+    }
+
+    .app-drawer {
+        height: calc(calc(100% - 9%) - var(--chromeHeight2));
+        top: calc(var(--chromeHeight1) + 1%)
+    }
+
+    #app-sidebar {
+        padding-bottom: var(--bottom);
+    }
+
+    #app-content{
+        .content-inner {
+
+            padding-bottom: calc(var(--padding-bottom) + 32px);
+
+
+            .top-fab {
+                bottom: calc(var(--padding-bottom) + 64px);
+            }
+
+            &.artist-page {
+                .artist-body {
+                    padding-bottom: calc(var(--padding-bottom) - 32px);
+                }
+            }
+
+            &.search-page {
+                padding-bottom: calc(var(--padding-bottom) - 32px);
+            }
+
+            &.settings-page {
+                padding-bottom: calc(var(--padding-bottom));
+            }
+
+            &.library-page {
+                padding-bottom: calc(var(--padding-bottom)) !important;
+            }
+
+            &.library-artists-page {
+                padding-bottom: calc(var(--padding-bottom)) !important;
+            }
+
+            &.collection-page {
+                padding-bottom: calc(var(--padding-bottom) - 16px) !important;
+            }
+
+            &.about-page {
+                button.sponsorBtn{
+                    color:var(--textColorLight) !important;
+                }
+            }
+
+            &.playlist-page {
+                padding-bottom: 0px !important;
+
+                .playlist-body.scrollbody{
+                    .tabs{
+                        .tab-content{ 
+                            .tab-pane{
+                                padding-bottom: calc(var(--padding-bottom)) !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .app-chrome{
+
+        .app-chrome--left{
+            width: min-content;
+
+            .playback-button.collapseLibrary  {
+                margin-left: 10px;
+            }
+        }
+
+        .app-chrome--right{
+            .app-chrome-item.volume {
+                margin-right: 2rem;
+            }
+        }
+        
+        &:not(.chrome-bottom){
+            .app-chrome--center {
+                .app-chrome-item {
+                    width: 100% !important;
+    
+                    .top-nav-group {                    
+                        width: 60%;
+                    }
+                }
+            }
+        }
+
+        &.chrome-bottom { 
+            border-radius: var(--borderadius);
+            border-radius: var(--borderadius);
+            left: var(--bottom);
+            right: var(--bottom);
+            width: auto;
+            position: fixed;
+            bottom: var(--bottom);
+            background-color: transparent;
+            backdrop-filter: var(--glassFilter2);
+            z-index: 20 !important;
+
+            &::before {
+                height: 0px;
+            }
+
+            .app-chrome--left{
+                padding-right: 16px;
+
+                .actions {
+                    display     : none;
+                }
+               
+            }
+
+            .app-chrome--center {
+                flex-direction  : row-reverse;
+                align-items     : center;
+                margin-left     : 16px;
+                margin-right    : 16px;
+                width           : -webkit-fill-available;
+
+                .playback-button.previous {
+                    background-image: url('icons/prev-bottom.svg');
+                    background-size: 85%;
+                    background-size: 75% !important;
+                }
+
+                .playback-button.play {
+                    background-image: url('icons/play-bottom.svg');
+                    opacity: 0.85;
+                    border-radius: 6px !important;
+                    height: 50px !important;
+                }
+
+                .playback-button.pause {
+                    background-image: url('icons/pause-bottom.svg');
+                    opacity: 0.85;
+                    border-radius: 6px !important;
+                    height: 50px !important;
+                }
+
+                .playback-button.stop {
+                    background-image: url('icons/stop-bottom.svg');
+                    opacity: 0.85;
+                    border-radius: 6px !important;
+                    height: 50px !important;
+                }
+                
+                .playback-button.next {
+                    background-image: url('icons/next-bottom.svg');
+                    background-size: 85%;
+                    background-size: 75% !important;
+                }
+
+            }
+
+            .app-chrome--right {
+                width: auto;
+                margin-left: 32px;
+            }
+        }
+    }
+
+    &[library-visible="0"] {
+        #app-main {
+            .app-chrome.chrome-bottom {
+                margin-left: 0;
+            }
+        }
+
+        .app-chrome:not(.chrome-bottom) {
+            &::before {
+                width: 100%;
+            }
+        }
+    }
+}

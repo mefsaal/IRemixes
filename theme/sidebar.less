@@ -1,0 +1,111 @@
+#app-sidebar {
+
+    padding-top                 : var(--chromeHeight1);
+    backdrop-filter             : var(--glassFilter2);    
+    background                  : @sidebarColorMix;
+    border-right                : var(--border);
+    align-self                  : flex-end;
+    backdrop-filter             : var(--glassFilter2);
+
+    .search-input {
+        transition: border 0.3s var(--appleEase);
+        background: var(--searchBarBackgroundColor);
+        filter    : saturate(0);
+        color     : var(--textColor);
+
+        &:focus {
+            border-bottom: none;
+            border       : 1px solid var(--keyColor);
+            transition   : border 0.3s var(--appleEase);
+        }
+    }
+
+    .search-input-container input {
+        height: 35px;
+    }
+
+    .search-hints-container .search-hints {
+        // margin-left:-10px;
+        width           : 92.5%;
+        background-color: var(--searchBackgroundColor);
+
+        .search-hint {
+            color: var(--textColor);
+
+            &:hover {
+                background: var(--keyColor);
+                color     : var(--textColorLight);
+            }
+        }
+    }
+
+    .app-sidebar-content {
+        padding-inline: 14px;
+        padding: 8px;
+        overflow-y: scroll;
+        overflow-y: overlay;
+        height: calc(100% - var(--chromeHeight2));
+    }
+
+    .app-sidebar-header-text:not(:first-of-type) {
+        margin-top: 1.25em;
+    }
+
+    .app-sidebar-header-text {
+        background-image: none
+    }
+    
+    .app-sidebar-header-text.collapsed {
+        background-image: none
+    }
+
+    .app-sidebar-item {
+        font-size : 15px;
+        padding   : 4px 16px;
+        color     : var(--textColor);
+        transition: background 0s 0s var(--appleEase), font-weight 0.3s 0.3s var(--appleEase);
+
+        &:not(.app-sidebar-item-playlist) .feather {
+            color: var(--keyColor);
+        }
+
+        .sidebar-icon {
+            transition: margin-right .3s;
+        }
+        .feather {
+            color: var(--sidebarIconColor);
+        }
+
+        &:hover {
+            transition: 0s;
+        }
+
+        &:active {
+            transition: 0s;
+            background-color: var(--activeTabColor);
+        }
+
+        &.active {
+            transition: background .3s;
+            background : var(--activeTabColor);
+            font-weight: 500;
+
+            .sidebar-icon {
+                margin-right: 12px;
+            }
+        }
+    }
+
+    .sidebar-icon>svg {
+        color: var(--keyColor);
+    }
+
+    .app-sidebar-button.active {
+        background: rgb(255 255 255 / 80%) !important;
+        animation : usermenuBtnClick 0s cubic-bezier(0.36, 0, 0.66, -0.56) !important;
+    }
+
+    ._svg-icon:not([svg-name='sidebar-playlist']) {
+        background: var(--keyColor);
+    }
+}
