@@ -213,16 +213,6 @@
         }
     }
 
-    .settings-window {
-        .md-option-container .md-option-line:not(:last-child){
-            border-bottom:var(--border) ;
-        }
-
-        .md-option-line.child{
-            border-radius: var(--borderadius);
-        }
-    }
-
     #app-content{
         border-left: var(--border);
         backdrop-filter: var(--glassFilter3) !important;
@@ -241,7 +231,6 @@
             }
 
             .grouping-btn {
-                // @baseColor: ;
                 background-color: var(--categoriesColor);
             }
     
@@ -556,6 +545,14 @@
             background: transparent;
             backdrop-filter: var(--glassFilter2);
             border-radius: var(--borderadius);
+
+            .md-option-container .md-option-line:not(:last-child){
+                border-bottom:var(--border) ;
+            }
+    
+            .md-option-line.child{
+                border-radius: var(--borderadius);
+            }
         }
 
         .md-option-container{
@@ -566,6 +563,20 @@
 
         ._svg-icon {
             background: var(--keyColor);
+        }
+
+        .keybinds-page {
+            padding-bottom  : 16px;
+            display         : flex;
+
+            .md-option-header {
+                position    : fixed;                
+            }
+
+            .settings-option-body {
+                width       : -webkit-fill-available;
+                padding-top : 48px;
+            }
         }
     }
 

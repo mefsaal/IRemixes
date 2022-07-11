@@ -102,40 +102,60 @@
 
         .app-chrome--right{
             .app-chrome-item.volume {
-                margin-right: 2rem;
+                margin-right    : 2rem;
             }
         }
         
         &:not(.chrome-bottom){
+            
             .app-chrome--center {
                 .app-chrome-item {
-                    width: 100% !important;
+                    width       : 100% !important;
     
                     .top-nav-group {                    
-                        width: 60%;
+                        width   : 60%;
                     }
                 }
+            }
+
+            .search-input {
+                width           : 50px;
+                transition      : width 0.35s var(--appleEase);
+
+                &:hover {
+                    width       : 140px;
+                }
+
+                &:active,
+                &:focus,
+                &:not(:placeholder-shown) {
+                    width       : 250px;
+                }
+            }
+
+            &::before {
+                transition: width 0.35s var(--appleEase);
             }
         }
 
         &.chrome-bottom { 
-            border-radius: var(--borderadius);
-            border-radius: var(--borderadius);
-            left: var(--bottom);
-            right: var(--bottom);
-            width: auto;
-            position: fixed;
-            bottom: var(--bottom);
-            background-color: transparent;
-            backdrop-filter: var(--glassFilter2);
-            z-index: 20 !important;
+            border-radius       : var(--borderadius);
+            border-radius       : var(--borderadius);
+            left                : var(--bottom);
+            right               : var(--bottom);
+            width               : auto;
+            position            : fixed;
+            bottom              : var(--bottom);
+            background-color    : transparent;
+            backdrop-filter     : var(--glassFilter2);
+            z-index             : 20 !important;
 
             &::before {
-                height: 0px;
+                display         : none !important;
             }
 
             .app-chrome--left{
-                padding-right: 16px;
+                padding-right   : 16px;
 
                 .actions {
                     display     : none;
@@ -151,43 +171,42 @@
                 width           : -webkit-fill-available;
 
                 .playback-button.previous {
-                    background-image: url('icons/prev-bottom.svg');
-                    background-size: 85%;
-                    background-size: 75% !important;
+                    background-image    : url('icons/prev-bottom.svg');
+                    background-size     : 75% !important;
                 }
 
                 .playback-button.play {
-                    background-image: url('icons/play-bottom.svg');
-                    opacity: 0.85;
-                    border-radius: 6px !important;
-                    height: 50px !important;
+                    background-image    : url('icons/play-bottom.svg');
+                    opacity             : 0.85;
+                    border-radius       : 6px !important;
+                    height              : 50px !important;
                 }
 
                 .playback-button.pause {
-                    background-image: url('icons/pause-bottom.svg');
-                    opacity: 0.85;
-                    border-radius: 6px !important;
-                    height: 50px !important;
+                    background-image    : url('icons/pause-bottom.svg');
+                    opacity             : 0.85;
+                    border-radius       : 6px !important;
+                    height              : 50px !important;
                 }
 
                 .playback-button.stop {
-                    background-image: url('icons/stop-bottom.svg');
-                    opacity: 0.85;
-                    border-radius: 6px !important;
-                    height: 50px !important;
+                    background-image    : url('icons/stop-bottom.svg');
+                    opacity             : 0.85;
+                    border-radius       : 6px !important;
+                    height              : 50px !important;
                 }
                 
                 .playback-button.next {
-                    background-image: url('icons/next-bottom.svg');
-                    background-size: 85%;
-                    background-size: 75% !important;
+                    background-image    : url('icons/next-bottom.svg');
+                    background-size     : 85%;
+                    background-size     : 75% !important;
                 }
 
             }
 
             .app-chrome--right {
-                width: auto;
-                margin-left: 32px;
+                width           : auto;
+                margin-left     : 32px;
             }
         }
     }

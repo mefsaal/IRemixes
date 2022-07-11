@@ -1,0 +1,11 @@
+#app.twopanel {
+    --bottom: 16px;
+
+    .app-chrome {
+        &.chrome-bottom {
+            margin-left     : var(--sidebarWidth);
+            left            : var(--bottom);
+            transition      : margin-left 0.35s var(--appleEase);
+        }
+    }
+}
