@@ -22,15 +22,15 @@
 
         .app-chrome--left {
             z-index             : 17;
-            width  : min-content;
+            width               : min-content;
 
-            .app-chrome-item:nth-of-type(2) {
+            > .app-chrome-item:nth-of-type(2) {
                 margin-left: calc(var(--sidebarWidth) * 0.4);
             }
 
             .shuffle {
                 margin-left: calc(var(--sidebarWidth) * 0.2);
-            }
+            } 
 
             .vdiv {
                 display: none;
@@ -215,33 +215,5 @@
         }
 
 
-    }
-
-    // Lyrics is on fullscreen
-    &.modular-fs {
-        .app-chrome:not(.chrome-bottom) {
-            &::before {
-                width: 100%;
-            }
-        }
-
-        .md-body.lyric-body {
-            backdrop-filter: none;
-            .lyric-line {
-                color: var(--textColorLight) !important;
-                opacity: 1;
-                transform: none;
-                scale: 1.5;
-                .lyrics-translation{
-                    // opacity: 0;
-                }
-            }
-        }
-
-        .lyric-footer {
-            background-color: transparent !important;
-            backdrop-filter: none !important;
-            padding-bottom  : 55px !important;            
-        }
     }
 }

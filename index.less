@@ -93,13 +93,6 @@
 
 #app {
 
-    .modular-fs {
-        .app-drawer {
-            width: 100% !important;
-            height: 100% !important;
-        }
-    }
-
     .app-mainmenu {
         background-image: none;
         //padding-right   : 120px;
@@ -131,8 +124,8 @@
         background           : none;
         border-radius        : 25%;
         background-repeat    : no-repeat;
-        width                : 37px;
-        height               : 37px;
+/*         width                : 37px;
+        height               : 37px; */
         background-size      : contain;
     }
 
@@ -216,6 +209,7 @@
     #app-content{
         border-left: var(--border);
         backdrop-filter: var(--glassFilter3) !important;
+        transition      : background-color 0.2s var(--appleEase);
 
         .content-inner{
 
@@ -228,6 +222,101 @@
 
             .well {
                 border-radius: var(--borderadius);
+            }
+
+            .cd-mediaitem-square-container {
+                align-self: flex-start;
+            }
+
+            .cd-mediaitem-square {
+                .info-rect {
+                    .title {
+                        font-size: 0.95em;
+                    }
+
+                    .subtitle {
+                        font-size: 0.95em;
+                    }
+                }
+            }
+
+            .cd-mediaitem-square {
+                padding  : 0;
+                min-width: 160px;
+                // width:100%;
+
+                .artwork-container {
+                    width: 95%;
+
+                    .artwork {
+                        width       : auto;
+                        height      : auto;
+                        aspect-ratio: 1;
+                    }
+                }
+
+                .title,
+                .subtitle {
+                    text-align     : left;
+                    justify-content: left;
+
+                    >div {
+                        // -webkit-box-orient: horizontal !important;
+                        -webkit-line-clamp: 2;
+                    }
+                }
+
+                .title+.subtitle {
+                    opacity: 0.7;
+                }
+
+                &.mediaitem-card {
+                    min-width   : 195px;
+                    max-width   : 288px;
+                    aspect-ratio: 57/74;
+
+                    .artwork-container {
+                        width: 100%;
+
+                        .artwork {
+                            width       : auto;
+                            height      : auto;
+                            aspect-ratio: 1;
+                        }
+                    }
+
+                    .title {
+                        text-overflow: ellipsis;
+                        white-space  : nowrap;
+                        overflow     : hidden;
+                    }
+
+                    .title,
+                    .subtitle {
+                        text-align        : center;
+                        justify-content   : center;
+                        margin-block-start: 0.5em;
+                        max-height        : 3.8em;
+                    }
+
+                    .title+.subtitle {
+                        opacity: 1;
+                    }
+                }
+
+                &.mediaitem-brick {
+
+                    .artwork {
+                        aspect-ratio: 290/163;
+                    }
+                }
+
+                &.mediaitem-video {
+
+                    .artwork {
+                        aspect-ratio: 16/9;
+                    }
+                }
             }
 
             .grouping-btn {
@@ -260,34 +349,63 @@
                 }
             }
 
-            .cd-mediaitem-square {
+            .list-group-item-dark:hover,
+            .list-group-item-dark.active {
+                background-color: var(--keyColor);
+                color           : var(--textColorLight);
+                border-radius   : 0px;
+            }
 
-                &.mediaitem-brick {
-                    width: calc(var(--contentWidth) / 4.95);
+            .list-group-item-dark.applied {
+                background: var(--keyColor-disabled);
+            }
 
-                    .artwork {
-                        aspect-ratio: 290/163;
-                    }
-                }
+            .listitem-horizontal {
+                .cd-mediaitem-list-item {
+                    overflow-x: visible;
 
-                &.mediaitem-video {
-                    height: 200px;
-                    width: 240px;
-
-                    .artwork {
-                        aspect-ratio: 16/9;
-                        height: 120px;
-                        width: 200px;
+                    .heart-icon {
+                        left: -15px;
                     }
                 }
             }
 
-            &.artist-page {
+            &.library-recentlyAdded {
+                .cd-mediaitem-square {
+                    width         : calc(var(--contentWidth) / 6.1);
+                    max-width     : 300px;
+                    padding-bottom: 20px;
+                }
+            }
 
+            &.podcasts-page {
+                .podcasts-search {
+                    background: transparent;
+                }
+            }
+
+            &.artist-page {
+                --contentWidth: calc(100vw - var(--sidebarWidth) - 72px);
                 .artist-title{
                     color: var(--textColor);
                 }
 
+                .artist-header {
+                    color: var(--textColor);
+
+                    .row {
+                        padding-left: 0;
+                    }
+                }
+
+                .floating-header {
+                    border-radius: var(--borderadius);
+
+                    .row {
+                        padding-left: 0;
+                    }
+                }
+                
                 .artist-body {
         
                     .well:not(.artistfeed-well){
@@ -295,21 +413,27 @@
                             margin-left: 15px;
                         }
         
-                        .topSongs{
-                            margin-left: 30px;
-            
+                        .topSongs {
+                            .row {
+                                padding-left: 16px;
+                            }
                             .col.flex-center{
-                                height: 300px;
+                                height: 311px;
             
                                 .mediaitem-list-item__grid{
                                     height: inherit;
                                     padding: 25px;
+                                    padding-left: 0px;
             
                                     .listitem-horizontal {
                                             
                                         .vue-horizontal[data-v-45080727]{
                                             display: grid !important;
                                         }
+                                    }
+
+                                    .heart-icon {
+                                        left: -15px;
                                     }
                                 }
                             }
@@ -318,10 +442,25 @@
                 }               
 
                 .more-btn-round{
-                    background: var(--keyColor);
-                    color: var(--textColorLight);
+                    background  : var(--keyColor);
+                    color       : var(--textColorLight);
                 }
-                
+
+                .cd-mediaitem-square {
+                    width: calc(var(--contentWidth) / 6);
+                    height: calc((var(--contentWidth) / 6) + 50px);
+
+                    &.mediaitem-card {
+                        width: 240px;
+                        height: unset;
+                    }
+
+                    &.mediaitem-video {
+                        width: calc(var(--contentWidth) / 5);
+                        height: auto;
+                        aspect-ratio: 16/11;
+                    }
+                }                
             }
 
             &.search-page {
@@ -354,17 +493,61 @@
 
             &.home-page {
                 .well.artistfeed-well{
+                    display         : block;
                     border-radius   : var(--borderadius);
                     background      : rgb(128 128 128 / 10%);
                 }
             }
 
             &.playlist-page {
+
+                &[is-album="true"] {
+                    
+                    .subtitle {
+                        display: none !important;
+                    }
+
+                    .info-rect {
+                        justify-content: flex-start;
+                    }
+                }
+
+                &[is-album="false"] {
+                    
+                }
+
+                .artist-chip {
+                    color: var(--textColor);
+
+                    .artist-chip__follow {
+                        color           : var(--keyColor);
+                        background-color: transparent;
+                        transition      : background-color 0.3s 0.3s var(--appleEase), color 0.3s 0.3s var(--appleEase);
+
+                        &:hover {
+                            background-color: var(--keyColor);
+                            color           : var(--textColorLight);
+                            transition      : background-color 0.3s var(--appleEase);
+                        }
+                    }
+                }
+
+                .more-btn-round {
+                    background: var(--keyColor);
+                }
+
                 .playlist-display {
                     border-radius       : 16px;
                     border              :var(--border);
+                    box-shadow          : none;
 
-                    .playlistInfo { 
+                    .artworkContainer {
+                        position: unset;
+                    }
+
+                    .playlistInfo {
+                        background: var(--color3);
+
                         .playlist-info { 
                             .playlist-desc {    
                                 height      : 6vh;
@@ -397,6 +580,59 @@
                         }
                     }
                 }
+
+                .cd-mediaitem-list-item {
+                    height: 60px;
+                    border-radius: var(--borderadius);
+
+                    &:nth-child(odd) {
+                        background-color    : rgba(255, 255, 255, 0.05);
+                        border-radius       : var(--borderadius);
+
+                    }
+
+                    .info-rect,
+                    .heart-icon,
+                    .explicit-icon,
+                    .duration {
+                        border-bottom: none !important;
+                    }
+
+                    .info-rect {
+                        flex-flow  : row;
+                        align-items: center;
+
+                        .title {
+                            width: 60ch;
+                        }
+
+                    }
+
+                    .subtitle {
+                        opacity  : 0.85;
+                        font-size: 0.9em;
+
+                        display: flex;
+                    }
+
+                    .mediaitem-selected {
+                        border-radius: var(--borderadius);
+                    }
+                }
+
+                .hero-tint {
+                    opacity: 0;
+                }
+
+                .playlist-hero {
+                    .mediaitem-artwork {
+                        right: 12%;
+                    }
+                }
+
+                .playlist-name {
+                    filter: none !important;
+                }
             }
 
             &.collection-page {
@@ -405,19 +641,155 @@
             
             &.library-page {
                 .heart-icon {
-                    left: -20px;
+                    left: -15px;
+                }
+
+                .well {
+                    display: block;
+                }
+            }
+
+            &.library-artists-page {
+
+                .list-container {
+                    border-right: 0px solid var(--contentBorderColor);
+                }
+
+                .podcasts-list {
+                    background: transparent;
+                    --color2  : transparent;
+                }
+
+
+                .cd-mediaitem-list-item {
+                    background-color: transparent;
+                    margin          : 0;
+                    width           : 100%;
+
+                    &:not(:last-of-type) {
+                        border-bottom: 0px solid var(--contentBorderColor);
+                        border-radius: var(--borderadius);
+                    }
+
+                    &:not(:last-of-type) .info-rect,
+                    &:not(:last-of-type) .metainfo,
+                    &:not(:last-of-type) .duration,
+                    &:not(:last-of-type) .explicit-icon {
+                        border-bottom: none;
+                    }
+
+                    .artwork {
+                        // box-shadow   : 0px 0px 12px;
+                        border-radius: 50%;
+                    }
+
+                    &:hover,
+                    &.active {
+                        width           : 95%;
+                        background-color: var(--artistHoverColor);
+                        color           : var(--textColorLight);
+                        transition      : 0.1s ease-in-out;
+                    }
+
+                }
+
+                .cd-mediaitem-list-item {
+                    width           : 95% ;
+                }
+            }
+
+            &.about-page {
+                button.sponsorBtn{
+                    color:var(--textColorLight) !important;
+                }
+
+                .githubBtn {
+                    background-color: #211F1F !important;
+                }
+
+                .kofiBtn {
+                    background-color: #FBAA19 !important;
+                }
+
+                .opencollectiveBtn {
+                    background-color: #7fadf2 !important;
+                }
+
+                .discordBtn {
+                    background-color: #5865F2 !important;
+                }
+                
+                .twitterBtn {
+                    background-color: #1D9BF0 !important;
+                }
+            }
+
+            .albums-square-container {
+                .cd-mediaitem-square-container {
+                    .cd-mediaitem-square {
+                        width: calc(145px * var(--windowRelativeScale));
+                        height: calc(185px * var(--windowRelativeScale));
+                    }
+                }
+            }
+
+            .well.itemContainer.collection-list-square {
+                display: grid;
+                grid-template-columns: repeat(7, minmax(150px, 1fr));
+                margin-inline: 0px;
+
+                .cd-mediaitem-square-container {
+                    margin-bottom: 1vw;
+                    width:100%;
+                    > .cd-mediaitem-square {
+                        width: 100%;
+                    }
+                }
+            }
+
+            @media screen and (max-width: 1400px) {
+                .well.itemContainer.collection-list-square {
+                    grid-template-columns: repeat(6, minmax(150px, 1fr)); // nah wait this works like its good, no scrolling bug for this... lemee show
+
+                }
+            }
+
+            @media screen and (max-width: 1300px) {
+                .well.itemContainer.collection-list-square {
+                    grid-template-columns: repeat(5, minmax(150px, 1fr)); // nah wait this works like its good, no scrolling bug for this... lemee show
+
+                }
+            }
+
+            @media screen and (max-width: 1200px) {
+                .well.itemContainer.collection-list-square {
+                    grid-template-columns: repeat(4, minmax(150px, 1fr));
+                }
+            }       
+            
+            @media screen and (max-width: 900px) {
+                .well.itemContainer.collection-list-square {
+                    grid-template-columns: repeat(3, minmax(150px, 1fr)); // nah wait this works like its good, no scrolling bug for this... lemee show
+
+                }
+            }
+
+            .v-hl-container[data-v-45080727]:not(.v-hl-scroll) {
+                .cd-mediaitem-square.mediaitem-small {
+                    width: calc(160px * var(--windowRelativeScale));
+                    height: calc(200px * var(--windowRelativeScale));
                 }
             }
 
         }
 
-        .v-hl-btn-next[data-v-45080727]{
+        .v-hl-btn-next[data-v-45080727] {
             right: 0px !important;
             
             .v-hl-svg[data-v-45080727] {
                 background: var(--keyColor);
                 backdrop-filter: blur(var(--blurSmall));
-                color: #000000;
+                color: hsla(0, 0%, 0%, 50%);
                 fill: currentColor;
                 box-shadow: 0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);
             }
@@ -432,14 +804,14 @@
     
         }
     
-        .v-hl-btn-prev[data-v-45080727]{
+        .v-hl-btn-prev[data-v-45080727] {
             transform       : rotate(0deg) !important;
             left            : -26px !important;
     
             .v-hl-svg[data-v-45080727] {
                 background: var(--keyColor);
                 backdrop-filter: blur(var(--blurSmall));
-                color: #000000;
+                color: rgba(0, 0, 0, 50%);
                 fill: currentColor;
                 box-shadow: 0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);
             }
@@ -453,78 +825,6 @@
             }
         }
 
-    }
-
-    .app-drawer {
-        border              : var(--border);
-        background          : var(--color1);
-        border-radius       : var(--borderadius);
-        backdrop-filter     : var(--glassFilter4);
-        width               : 320px;
-
-        .lyric-footer {
-            background: var(--color1);
-            backdrop-filter: var(--glassFilter2);
-        }
-
-        .queue-body {
-            overflow-x: hidden;
-            overflow-y: scroll;
-
-            .cd-queue-item,
-            .cd-mediaitem-list-item {
-                width: 100% !important;
-
-                .queue-info {
-                    width: 190px;
-                }
-
-                .info-rect,
-                .queue-info {
-                    border-bottom: 0px solid var(--contentBorderColor);
-                    width        : 100%;
-                }
-
-                .duration,
-                .queue-duration,
-                .queue-explicit-icon {
-                    font-size    : 0.8rem;
-                    border-bottom: 0px solid var(--contentBorderColor);
-                }
-            }
-
-            .cd-queue-item {
-                //width: 130% !important;
-                padding                 : 0;
-                height                  : 60px;
-                display                 : flex;
-                flex-direction          : column;
-                flex                    : 0 0 auto;
-                border-radius           : var(--borderadius);
-
-                & .row {
-                    height: 100%;
-                }
-            }
-        }
-        
-        .queue-footer{
-
-            .btn-group > .md-btn:last-child{
-                border-top-left-radius: 0px;
-                border-bottom-left-radius: 0px;
-                border-top-right-radius: 16px;
-                border-bottom-right-radius: 16px;
-            }         
-
-            .btn-group > .md-btn:first-child {
-                border-top-left-radius: 16px;
-                border-bottom-left-radius: 16px;
-                border-top-right-radius: 0px;
-                border-bottom-right-radius: 0px;
-            }
-
-        }
     }
 
     input[type=checkbox][switch]:checked {

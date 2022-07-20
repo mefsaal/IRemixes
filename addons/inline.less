@@ -1,48 +1,52 @@
 #app {
 
-    .drawertransition-enter-active,
-    .drawertransition-leave-active {
-        transition              : margin .25s var(--appleEase), opacity .25s var(--appleEase);
-        background              : var(--baseColorMix);
-        backdrop-filter         : var(--glassFilter3);
-    }
-
-    .drawertransition-enter,
-    .drawertransition-leave-to {
-        margin-right            : -320px;
-        background              : var(--baseColorMix);
-        backdrop-filter         : var(--glassFilter3);
-    }
-}
-
-#app-main {
     &:not(.modular-fs) {
         .app-drawer {
-        position            : relative;
-        right               : 0px;
-        border-radius       : 0px;
-        top                 : 0px !important;
-        box-shadow          : none;
-        height              : -webkit-fill-available !important;
-        background          : var(--baseColorMix);
-        backdrop-filter     : var(--glassFilter3);
+            position            : relative;
+            bottom              : 0;
+            right               : 0;
+            border-radius       : 0;
+            top                 : unset !important;
+            box-shadow          : none;
+            height              : -webkit-fill-available !important;
+            backdrop-filter     : var(--glassFilter3);
+            margin-right        : 0px;
+            padding-top         : var(--chromeHeight1);
 
             .lyric-body{
-                margin-top : 50px;
                 .lyric-line {
-                    transform         : scale(0.75);
                     margin-block-start: 20px;
-                    opacity           : 0.3;
+
+                    &:not(.active) {
+                        transform: scale(0.9);
+                        filter: blur(1.5px) opacity(0.4);
+                        padding-block: 5px;
+                    }
 
                     &.active {
-                        opacity         : 1;
+                        opacity         : 1.5;
                         backdrop-filter : blur(0px);
                         transform       : scale(1);
                         transform-origin: left center;
                         transition      : all 0.5s var(--appleEase);
+                        //padding-top: 5px;
                     }
                 }
             }
+        }
+
+        .drawertransition-enter-active,
+        .drawertransition-leave-active {
+            transition              : margin .25s var(--appleEase), opacity .25s var(--appleEase);
+            background              : var(--baseColorMix);
+            backdrop-filter         : var(--glassFilter3);
+        }
+
+        .drawertransition-enter,
+        .drawertransition-leave-to {
+            margin-right            : -320px;
+            background              : var(--baseColorMix);
+            backdrop-filter         : var(--glassFilter3);
         }
     }
 }
@@ -54,7 +58,7 @@
         height              : -webkit-fill-available !important;
 
         .app-drawer {
-            padding-bottom          : calc(var(--padding-bottom) + 94px);
+            padding-bottom          : var(--padding-bottom);
 
             .lyric-body {
                 //padding-bottom      : var(--padding-bottom);
@@ -72,7 +76,7 @@
 
     }
 
-    .modular-fs { 
+    &.modular-fs { 
         .app-drawer {
             .lyric-footer {
                 bottom      : 0px !important;
