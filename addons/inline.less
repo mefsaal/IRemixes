@@ -59,6 +59,7 @@
 
         .app-drawer {
             padding-bottom          : var(--padding-bottom);
+            bottom                  : unset !important;
 
             .lyric-body {
                 //padding-bottom      : var(--padding-bottom);
@@ -73,13 +74,12 @@
                 height: calc(100% + var(--chromeHeight2))
             }
         }
-
     }
 
-    &.modular-fs { 
+    .modular-fs {
         .app-drawer {
             .lyric-footer {
-                bottom      : 0px !important;
+                margin-bottom       : unset !important;
             }
         }
     }

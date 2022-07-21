@@ -74,7 +74,7 @@
             color: var(--textColorLight) !important;
             opacity: 1;
             transform: none;
-            scale: 1;
+            scale: 1.5;
             font-size: 60px;
             text-align: center;
             align-items: center;
@@ -92,7 +92,7 @@
 
     .lyric-footer {
         background-color: transparent !important;
-        padding-bottom  : 55px !important;
+        backdrop-filter: none !important;
     }
 }
 
@@ -183,23 +183,15 @@
             }
         }
 
-        .md-body.lyric-body {
-            backdrop-filter: none;
-            .lyric-line {
-                color: var(--textColorLight) !important;
-                opacity: 1;
-                transform: none;
-                scale: 1.5;
-                .lyrics-translation{
-                    // opacity: 0;
-                }
-            }
-        }
-
         .lyric-footer {
-            background-color: transparent !important;
-            backdrop-filter: none !important;
-            padding-bottom  : 55px !important;            
+            bottom: var(--bottom);
+        }
+    }
+
+    &:not(.modular-fs) {
+        .app-drawer {
+            height: unset;
+            bottom: var(--bottom);
         }
     }
 }
@@ -207,19 +199,19 @@
 #app.twopanel {
     .modular-fs {
         .app-drawer {
-            top: 0px !important;
+            top: 0 !important;
             z-index: 16;
             
             .lyric-footer {
-                bottom: calc(var(--padding-bottom));
-                margin-bottom: unset !important;
+                bottom: calc( var(--padding-bottom) + var(--bottom) ) !important;
             }
         }
     }
 
     &:not(.modular-fs) {
         .app-drawer {
-            height: calc(calc(100% - 9%) - var(--chromeHeight2));
+            height: unset;
+            bottom: calc( var(--padding-bottom) + var(--bottom) ) !important;
         }
     }
 }
