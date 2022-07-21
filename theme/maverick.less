@@ -185,10 +185,13 @@
             .app-chrome-item.volume {
                 width       : 120px;
                 margin-right: 3rem;
+                justify-content: left;
 
                 input[type="range"] {
                     background-color: transparent;
                     height          : 20px;
+                    width           : 10px;
+                    transition      : width 0.35s var(--appleEase);
 
                     &::-webkit-slider-runnable-track {
                         background   : var(--keyColor);
@@ -204,6 +207,11 @@
                         background: mix(@volumeThumbColor, @mediaColor, 50%);
                         margin-top: -5px;
 
+                    }
+
+                    &:hover,
+                    &:active {
+                        width: 80%;
                     }
 
                 }
