@@ -2,7 +2,6 @@
     .fullscreen-view{
         .lyrics-col{
             width:100%;
-            margin-top: 100px;
             .lyric-body{
                 width:100%;
             }
@@ -16,14 +15,12 @@
             &:not(.active) {
                 transform: scale(1);
                 filter: blur(1.5px) opacity(0.4);
-                padding-block: 15px;
             }
             
             &.active{
                 transform: scale(1);
                 backdrop-filter : blur(0px);
                 transition: all 0.5s var(--appleEase);
-                padding-top: 15px;
             }
         }
     }

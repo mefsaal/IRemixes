@@ -230,6 +230,18 @@
                 border-radius: var(--borderadius);
             }
 
+            .col {
+                .item-navigate{
+                    z-index: 30;
+                    &:hover{
+                        text-decoration: none;
+                        h3{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+
             .cd-mediaitem-square-container {
                 align-self: flex-start;
             }
@@ -466,7 +478,18 @@
                         height: auto;
                         aspect-ratio: 16/11;
                     }
-                }                
+                }
+
+                &.animated {
+                
+                    .artist-header {
+                        min-height: 70vh;
+                    }
+
+                    .artist-header-compact {
+                        min-height: 50vh;
+                    }
+                }
             }
 
             &.search-page {
@@ -884,10 +907,6 @@
                 padding-top : 48px;
             }
         }
-    }
-
-    .artist-page.animated .artist-header {
-        min-height: 50vh;
     }
 }
 
