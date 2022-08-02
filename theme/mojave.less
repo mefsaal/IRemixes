@@ -4,9 +4,6 @@
     --chromeHeight          : var(--chromeHeight1);
     --padding-bottom        : calc(var(--chromeHeight2) + var(--bottom));
 
-    .app-mainmenu{
-        margin-right: calc(var(--sidebarWidth) * 0.5);
-    }
 
     .app-navigation {
         height: 100%;
@@ -96,6 +93,11 @@
                         width   : 60%;
                     }
                 }
+            }
+
+            .app-chrome--left > div:nth-of-type(3) {
+                margin-left     : calc(var(--sidebarWidth)/2.3);
+                transition      : margin-left 0.35s var(--appleEase);
             }
 
             .search-input {
@@ -203,6 +205,9 @@
         }
 
         .app-chrome:not(.chrome-bottom) {
+            .app-chrome--left > div:nth-of-type(3) {
+                margin-left: 0 !important;
+            }
             &::before {
                 width: 100%;
             }

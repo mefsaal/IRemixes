@@ -130,8 +130,6 @@
         background           : none;
         border-radius        : 25%;
         background-repeat    : no-repeat;
-/*         width                : 37px;
-        height               : 37px; */
         background-size      : contain;
     }
 
@@ -242,6 +240,16 @@
                 }
             }
 
+            .item-navigate{
+                z-index: 30;
+                &:hover{
+                    text-decoration: none;
+                    h3{
+                        text-decoration: underline;
+                    }
+                }
+            }
+
             .cd-mediaitem-square-container {
                 align-self: flex-start;
             }
@@ -341,7 +349,7 @@
                 background-color: var(--categoriesColor);
             }
     
-            .cd-btn-seeall {
+            .cd-btn-seeall, .v-hl-btn {
                 z-index: 2;
             }
 
@@ -487,7 +495,7 @@
                     }
 
                     .artist-header-compact {
-                        min-height: 50vh;
+                        min-height: 35vh;
                     }
                 }
             }
@@ -509,6 +517,10 @@
                 }
 
                 .cd-mediaitem-square {
+                    .artwork-container{
+                        width: 100%;
+                    }
+                    
                     .mediaitem-brick {
                         .info-rect {
                             .title {

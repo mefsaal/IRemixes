@@ -12,27 +12,6 @@
             backdrop-filter     : var(--glassFilter3);
             margin-right        : 0px;
             padding-top         : var(--chromeHeight1);
-
-            .lyric-body{
-                .lyric-line {
-                    margin-block-start: 20px;
-
-                    &:not(.active) {
-                        transform: scale(0.9);
-                        filter: blur(1.5px) opacity(0.4);
-                        padding-block: 5px;
-                    }
-
-                    &.active {
-                        opacity         : 1.5;
-                        backdrop-filter : blur(0px);
-                        transform       : scale(1);
-                        transform-origin: left center;
-                        transition      : all 0.5s var(--appleEase);
-                        //padding-top: 5px;
-                    }
-                }
-            }
         }
 
         .drawertransition-enter-active,
@@ -51,6 +30,18 @@
     }
 }
 
+#app-main {
+    &:not(.modular-fs) {
+        .app-drawer {
+            bottom: 0 !important;
+            
+            .lyric-footer {
+                height: calc( 50px + var(--bottom));
+                padding-bottom: 16px;
+            }
+        }
+    }
+}
 
 #app.twopanel {
     &:not(.modular-fs) {
